@@ -5,22 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style-all.css"> -->
 </head>
 <body>
     <!-- Навигация -->
     <nav class="nav animate__animated">
         <div class="container nav-container">
             <a href="#" class="logo">ИСТОРИКВЕСТ</a>
-            <ul class="nav-links">
-                <li><a href="#about">О проекте</a></li>
-                <li><a href="#features">Возможности</a></li>
-                <li><a href="#quests">Квесты</a></li>
-                <li><a href="#timeline">Эпохи</a></li>
-                <li><a href="#contacts">Контакты</a></li>
-            </ul>
-            <div class="mobile-menu-btn"><input type="checkbox" class = "burger-toggle" id="burger-toggle" name="">
+            <div class="big-menu">
+                
+                <ul class="nav-links menu-links">
+                    <li><a href="#about">О проекте</a></li>
+                    <li><a href="#features">Возможности</a></li>
+                    <li><a href="#quests">Квесты</a></li>
+                    <li><a href="#timeline">Эпохи</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>    
+            </div>
+            <div class="mobile-menu-btn">
+                <input type="checkbox" class = "burger-toggle" id="burger-toggle" name="">
                 <label for="burger-toggle" class="burger-button"><span class="burger-line"></span></label>
-                <ul class="nav-links burger-links">
+                <ul class="burger-links menu-links">
                     <li><a href="#about">О проекте</a></li>
                     <li><a href="#features">Возможности</a></li>
                     <li><a href="#quests">Квесты</a></li>
@@ -30,6 +35,9 @@
             </div> 
         </div>
     </nav>    
+
+
+    
 
     <script src="code.js"></script>
 </body>

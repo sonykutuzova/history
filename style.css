@@ -133,6 +133,10 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
+.big-menu{
+	display: flex;
+	justify-content: space-between;
+}
 
 .logo {
     color: var(--vintage-beige);
@@ -145,24 +149,31 @@ nav {
 }
 
 /* Меню на большом экране */
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
 .nav-links li {
     margin-left: 30px;
 }
 
+.big-menu {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Важно! */
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    margin-left: auto; /* Это сдвинет меню вправо */
+}
+
 /* Анимация подчеркивания меню */
-.nav-links a {
+.menu-links a {
     color: var(--vintage-beige);
     text-decoration: none;
     font-weight: 500;
     font-size: 1.1rem;
     position: relative;
 }
-.nav-links a::after {
+.menu-links a::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -172,7 +183,7 @@ nav {
     background-color: var(--vintage-gold);
     transition: width 0.3s;
 }
-.nav-links a:hover::after {
+.menu-links a:hover::after {
     width: 100%;
 }
 
@@ -207,8 +218,12 @@ nav {
     .burger-button{
         display: block;
     }
-    
-    .nav-links {
+    .big-menu{
+        display: none;
+        list-style: none;
+        background-color: #8b2e2e;
+    }
+    .burger-links {
         position: absolute;
         top: 50px; 
         left: 0;
@@ -218,16 +233,15 @@ nav {
         padding: 10px 20px;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 
-        max-height: 0; /* Сначала скрыто */
-        overflow: hidden; /* Обрезаем содержимое */
-        transition: max-height 0.8s ease; /* Анимация высоты */
+        max-height: 0; 
+        overflow: hidden; 
+        transition: max-height 0.8s ease; 
     }
-    .nav-links li {
-        margin: 8px 0;
-        
+    .burger-links li {
+        margin: 8px 0; 
     }
     
-    .nav-links a {
+    .burger-links a {
         font-size: 1.1rem;
         padding: 5px 0;
     }
@@ -239,7 +253,6 @@ nav {
         max-width: 300px;
         font-size: 1.1rem;
     }
-    
     nav {
         padding: auto;
     }
@@ -256,14 +269,14 @@ nav {
 }
 @media (min-width: 768px) {
     .nav-links {
-      display: flex !important; /* Переопределяет display: none */
-      flex-direction: row; /* Горизонтальное расположение */
+      display: flex !important; 
+      flex-direction: row;
     }
-    .burger-button {
-      display: none !important; /* Скрываем бургер на десктопе */
+    .burger-button, .burger-links {
+      display: none !important; 
     }
     .burger-toggle {
-      display: none !important; /* Скрываем чекбокс */
+      display: none !important; 
     }
   }
   
@@ -313,7 +326,7 @@ nav {
     border-radius: 20px;
 }
 
-.burger-toggle:checked~.nav-links{
+.burger-toggle:checked~.burger-links{
     max-height: 300px;
 }
 .burger-toggle:checked~.burger-button>.burger-line{
