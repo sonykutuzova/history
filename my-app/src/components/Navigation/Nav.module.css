@@ -1,7 +1,31 @@
-/* При нажатии на ссылку бургер меню не закрывается */
-/* Навигация */
-nav {
-    background-color: var(--vintage-dark);
+:root {
+    --primary: #2c3e50;
+    --secondary: #e74c3c;
+    --accent: #f39c12;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --text: #333;
+    --text-light: #7f8c8d;
+    --vintage-dark: #3a3226;
+    --vintage-brown: #5d4b36;
+    --vintage-beige: #d2b48c;
+    --vintage-paper: #f5e7d0;
+    --vintage-red: #8b2e2e;
+    --vintage-gold: #b8860b;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Serif', serif;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.nav {
+    background: var(--vintage-dark);
     padding: 20px 0;
     position: fixed;
     width: 100%;
@@ -11,14 +35,10 @@ nav {
     border-bottom: 2px solid var(--vintage-gold);
 }
 
-.nav-container {
+.navContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.big-menu{
-	display: flex;
-	justify-content: space-between;
 }
 
 .logo {
@@ -32,31 +52,33 @@ nav {
 }
 
 /* Меню на большом экране */
-.nav-links li {
+.navLinksLi {
     margin-left: 30px;
 }
 
-.big-menu {
+.bigMenu {
     display: flex;
     justify-content: space-between;
     width: 100%; /* Важно! */
     align-items: center;
 }
 
-.nav-links {
+.navLinks {
     display: flex;
     margin-left: auto; /* Это сдвинет меню вправо */
+    text-decoration: none;
+    list-style: none;
 }
 
 /* Анимация подчеркивания меню */
-.menu-links a {
+.menuLinksA {
     color: var(--vintage-beige);
     text-decoration: none;
     font-weight: 500;
     font-size: 1.1rem;
     position: relative;
 }
-.menu-links a::after {
+.menuLinksA::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -66,17 +88,36 @@ nav {
     background-color: var(--vintage-gold);
     transition: width 0.3s;
 }
-.menu-links a:hover::after {
+.menuLinksA:hover::after {
     width: 100%;
 }
 
-.mobile-menu-btn {
+.mobileMenuBtn {
     display: none;
 }
 
 /* Адаптивность */
+
+@media (min-width: 768px) {
+    .navLinks {
+      display: flex !important; 
+      flex-direction: row;
+      text-decoration: none;
+      list-style: none;
+    }
+    .burgerButton, .burgerLinks {
+      text-decoration: none;
+      list-style: none;
+      display: none !important; 
+    }
+    .burgerToggle {
+      display: none !important; 
+    }
+  }
+  
+
 @media (max-width: 992px) {
-    .nav-links li {
+    .navLinksLi {
         margin-left: 15px;
     }
 }
@@ -85,7 +126,7 @@ nav {
     html {
         font-size: 14px;
     }
-    .nav-container {
+    .navContainer {
         padding: 0 15px;
     }   
     .logo {
@@ -93,20 +134,22 @@ nav {
         max-width: 300px;
     }
     
-    .mobile-menu-btn {
+    .mobileMenuBtn {
         display: block;
         font-size: 1.3rem;
         padding: 5px;
     }
-    .burger-button{
+    .burgerButton{
         display: block;
     }
-    .big-menu{
+    .bigMenu{
         display: none;
         list-style: none;
         background-color: #8b2e2e;
+        text-decoration: none;
+        list-style: none;
     }
-    .burger-links {
+    .burgerLinks {
         position: absolute;
         top: 50px; 
         left: 0;
@@ -115,19 +158,21 @@ nav {
         flex-direction: column;
         padding: 10px 20px;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        text-decoration: none;
+        list-style: none;
 
         max-height: 0; 
         overflow: hidden; 
         transition: max-height 0.8s ease; 
     }
-    .burger-links li {
+    .burgerLinksLi {
         margin: 8px 0; 
     }
     
-    .burger-links a {
+    /* .burgerLinksA {
         font-size: 1.1rem;
         padding: 5px 0;
-    }
+    } */
    
 }
 
@@ -136,10 +181,10 @@ nav {
         max-width: 300px;
         font-size: 1.1rem;
     }
-    nav {
+    .nav {
         padding: auto;
     }
-    .nav-container{
+    .navContainer{
         max-width: 768px;
     }
 }
@@ -148,23 +193,13 @@ nav {
     .logo {
         max-width: 200px;
         font-size: 1rem;
-    }        
+    }     
+    .checkbox {
+        font-size: 1.1rem;
+    }   
 }
-@media (min-width: 768px) {
-    .nav-links {
-      display: flex !important; 
-      flex-direction: row;
-    }
-    .burger-button, .burger-links {
-      display: none !important; 
-    }
-    .burger-toggle {
-      display: none !important; 
-    }
-  }
-  
 
-.burger-button{
+.burgerButton{
 	display: flex;
 	width: 26px;
 	height: 26px;
@@ -174,10 +209,10 @@ nav {
 	user-select: none;
 	position: relative;
 }
-.burger-toggle{
+.burgerToggle{
 	display: none;
 }
-.burger-line{
+.burgerLine{
 	position: absolute;
 	display: block;
 	width: 100%;
@@ -186,7 +221,7 @@ nav {
 	transition: 0.5s;
     border-radius: 20px;
 }
-.burger-line::before{
+.burgerLine::before{
 	top: -8px;
 	position: absolute;
 	content: "";
@@ -197,7 +232,7 @@ nav {
 	transition: 0.5s;
     border-radius: 20px;
 }
-.burger-line::after{
+.burgerLine::after{
 	top: 8px;
 	position: absolute;
 	content: "";
@@ -209,17 +244,17 @@ nav {
     border-radius: 20px;
 }
 
-.burger-toggle:checked~.burger-links{
+.burgerToggle:checked~.burgerLinks{
     max-height: 300px;
 }
-.burger-toggle:checked~.burger-button>.burger-line{
+.burgerToggle:checked~.burgerButton>.burgerLine{
    	transform: rotate(45deg);
 }
-.burger-toggle:checked~.burger-button>.burger-line::before{
+.burgerToggle:checked~.burgerButton>.burgerLine::before{
 	top: 0;
    	transform: rotate(0);
 }
-.burger-toggle:checked~.burger-button>.burger-line::after{
+.burgerToggle:checked~.burgerButton>.burgerLine::after{
 	top: 0;
    	transform: rotate(90deg);
 }

@@ -1,0 +1,362 @@
+/* .quizContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #fff8e7;
+    border: 1px solid #e0c097;
+    border-radius: 10px;
+  }
+  
+  .questionBlock {
+    margin-bottom: 30px;
+  }
+  
+  .questionText {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #3e2c1c;
+  }
+  
+  .optionsList {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .optionLabel {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  
+  .correct {
+    color: green;
+    margin-left: 10px;
+    font-weight: bold;
+  }
+  
+  .incorrect {
+    color: red;
+    margin-left: 10px;
+    font-weight: bold;
+  }
+  
+  .submitBtn,
+  .backBtn {
+    background-color: #c19a6b;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 10px;
+  }
+  
+  .submitBtn:hover,
+  .backBtn:hover {
+    background-color: #a47c50;
+  }
+  
+  .resultBlock {
+    margin-top: 20px;
+  }
+  
+  .explanation {
+    margin-top: 10px;
+    font-style: italic;
+  }
+   */
+
+   .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Georgia', serif;
+  }
+  
+  .backButton {
+    background: none;
+    border: none;
+    color: #5c3c21;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+  
+  .backButton:hover {
+    background-color: #f0e6d2;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .era {
+    display: inline-block;
+    background-color: #8b4513;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    color: #3a2a1e;
+    margin: 10px 0;
+  }
+  
+  .description {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .quizContent {
+    background-color: #fffaf0;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .questionBlock {
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+  }
+  
+  .questionBlock:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .correctQuestion {
+    border-left-color: #2e8b57;
+    background-color: #f0fff0;
+  }
+  
+  .incorrectQuestion {
+    border-left-color: #cd5c5c;
+    background-color: #fff0f0;
+  }
+  
+  .questionText {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #3a2a1e;
+    margin-bottom: 15px;
+  }
+  
+  .optionsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .optionLabel {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+  }
+  
+  .optionLabel:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .radioInput {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .customRadio {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 2px solid #d4a76a;
+    border-radius: 50%;
+    margin-right: 12px;
+    transition: all 0.2s;
+  }
+  
+  .radioInput:checked ~ .customRadio {
+    background-color: #d4a76a;
+    border-color: #8b4513;
+  }
+  
+  .radioInput:checked ~ .customRadio::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+  }
+  
+  .optionText {
+    flex-grow: 1;
+    color: #333;
+  }
+  
+  .correctMarker {
+    color: #2e8b57;
+    font-weight: bold;
+    margin-left: 10px;
+    animation: fadeIn 0.5s;
+  }
+  
+  .incorrectMarker {
+    color: #cd5c5c;
+    font-weight: bold;
+    margin-left: 10px;
+    animation: fadeIn 0.5s;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  .submitBtn {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 30px auto 0;
+    padding: 12px 20px;
+    background-color: #8b4513;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submitBtn:hover {
+    background-color: #6b3410;
+  }
+  
+  .submitBtn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .resultBlock {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f5eb;
+    border-radius: 8px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+  }
+  
+  .resultBlock.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .resultBlock h3 {
+    margin-top: 0;
+    color: #3a2a1e;
+  }
+  
+  .scoreCircle {
+    width: 120px;
+    height: 120px;
+    margin: 20px auto;
+    border-radius: 50%;
+    background-color: #8b4513;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: scaleIn 0.5s ease-out;
+  }
+  
+  .scoreCircle span:first-child {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+  
+  .scoreCircle span:last-child {
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+  
+  @keyframes scaleIn {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  .scoreText {
+    font-size: 1.2rem;
+    color: #5c3c21;
+    margin: 15px 0;
+  }
+  
+  .explanation {
+    font-style: italic;
+    color: #666;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #fff;
+    border-left: 3px solid #d4a76a;
+    border-radius: 0 4px 4px 0;
+  }
+  
+  .tryAgainBtn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #d4a76a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .tryAgainBtn:hover {
+    background-color: #b38b5a;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+    
+    .title {
+      font-size: 1.5rem;
+    }
+    
+    .quizContent {
+      padding: 20px;
+    }
+    
+    .questionBlock {
+      padding: 15px;
+    }
+  }

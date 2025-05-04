@@ -1,0 +1,82 @@
+.section {
+    padding: 80px 0;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--vintage-dark);
+    position: relative;
+    text-align: center;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: var(--vintage-gold);
+    margin: 20px auto;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* О проекте */
+.aboutContent {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+.aboutImage{
+    flex: 1;
+}
+
+.aboutText {
+    flex: 1;
+}
+
+.aboutText p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.aboutText p:first-child {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+.vintageBorder {
+    width: 100%;
+    border: 10px solid var(--vintage-beige);
+    box-shadow: 0 0 0 10px var(--vintage-brown), 0 0 30px rgba(0,0,0,0.3);
+    transform: rotate(3deg);
+    transition: transform 0.3s;
+}
+
+.vintageBorder:hover {
+    transform: rotate(0);
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    .section {
+        padding: 30px 0;
+    }
+}
+
+@media (max-width: 576px) {
+   
+    .aboutImage{
+        display: none;
+    }
+}
+
+

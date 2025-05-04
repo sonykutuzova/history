@@ -1,0 +1,175 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--vintage-dark);
+    position: relative;
+    text-align: center;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: var(--vintage-gold);
+    margin: 20px auto;
+}
+
+.sectionDescription {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+
+.btnSmall {
+    display: inline-block;
+    background-color: var(--vintage-brown);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 0;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 1px solid var(--vintage-gold);
+    font-size: 0.9rem;
+}
+
+.btnSmall:hover {
+    background-color: var(--vintage-red);
+}
+
+
+.questsSection {
+    background: var(--vintage-paper);
+}
+
+.questsScrollContainer {
+    overflow-x: auto;
+    padding: 20px 0;
+    margin: 0 -20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--vintage-gold) var(--vintage-beige);
+}
+
+.questsScrollContainer::-webkit-scrollbar {
+    height: 8px;
+}
+
+.questsScrollContainer::-webkit-scrollbar-track {
+    background: var(--vintage-beige);
+}
+
+.questsScrollContainer::-webkit-scrollbar-thumb {
+    background: var(--vintage-gold);
+    border-radius: 20px;
+}
+
+.questsContainer {
+    display: flex;
+    gap: 30px;
+    padding: 0 20px;
+    width: max-content;
+}
+
+.questCard {
+    width: 350px;
+    flex-shrink: 0;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--vintage-beige);
+    position: relative;
+}
+
+.questCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.questImg {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.questEra {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--vintage-red);
+    color: white;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.questBadge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--vintage-gold);
+    color: var(--vintage-dark);
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.questContent {
+    padding: 25px;
+}
+
+.questContent h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.5rem;
+    color: var(--vintage-dark);
+    font-family: 'Playfair Display', serif;
+}
+
+.questContent p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: var(--text-light);
+}
+
+.questMeta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: var(--vintage-brown);
+    font-size: 0.9rem;
+}
+
+
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    .section {
+        padding: 30px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .questsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .btnSmall{
+        width: 100%;
+    }
+    
+}

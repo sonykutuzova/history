@@ -1,0 +1,81 @@
+
+
+.section {
+    padding: 80px 0;
+}
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--vintage-dark);
+    position: relative;
+    text-align: center;
+}
+h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: var(--vintage-gold);
+    margin: 20px auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+.featuresSection {
+    background-color: white;
+    background-image: url('https://www.transparenttextures.com/patterns/paper-1.png');
+    border-top: 1px solid var(--vintage-beige);
+    border-bottom: 1px solid var(--vintage-beige);
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}  
+
+.featureCard {
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--vintage-beige);
+    text-align: center;
+}
+
+.featureCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.featureIcon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.featureTitle {
+    margin-bottom: 15px;
+    color: var(--vintage-dark);
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    .section {
+        padding: 30px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .featureCard {
+        padding: 15px;
+    }
+}

@@ -1,0 +1,137 @@
+body {
+    background-color: var(--vintage-paper);
+    color: var(--text);
+    line-height: 1.6;
+    background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--vintage-red);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    border: 2px solid var(--vintage-gold);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--vintage-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Анимации */
+@keyframes animate {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+.pulse {
+    animation: pulse 2s infinite;
+}
+.animate{
+    animation: animate 2s;
+}
+/* Герой секция */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../assets/images/st-petersburg-back.jpg') no-repeat center center/cover;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    margin-top: 80px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://www.transparenttextures.com/patterns/rice-paper-3.png');
+    opacity: 0.3;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.heroH1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.scrollDown {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 2rem;
+    animation-duration: 2s;
+}
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    .hero {
+        margin-top: 50px; /* Уменьшил отступ */
+    }
+    
+    .heroH1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {  
+    .hero {
+        min-height: 350px;
+        margin-top: 45px;
+    }
+    
+    .heroH1 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .hero .subtitle {
+        font-size: 0.9rem;
+    }
+    
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .heroH1 {
+        font-size: 1.3rem;
+    }
+    
+    
+}

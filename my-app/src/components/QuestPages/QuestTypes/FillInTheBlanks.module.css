@@ -1,0 +1,344 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Georgia', serif;
+  }
+  
+  .backButton {
+    background: none;
+    border: none;
+    color: #5c3c21;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+  
+  .backButton:hover {
+    background-color: #f0e6d2;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .era {
+    display: inline-block;
+    background-color: #8b4513;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    color: #3a2a1e;
+    margin: 10px 0;
+  }
+  
+  .description {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .controlButton {
+    padding: 8px 16px;
+    background-color: #f0e6d2;
+    border: 1px solid #d4a76a;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .controlButton:hover {
+    background-color: #e6d8b5;
+  }
+  
+  .controlButton.active {
+    background-color: #d4a76a;
+    color: white;
+  }
+  
+  .controlButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .questContent {
+    background-color: #fffaf0;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .textBlock {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .inputWrapper {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 5px;
+    vertical-align: middle;
+  }
+  .hintBubble {
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    background-color: rgba(58, 42, 30, 0.9); /* Полупрозрачный фон */
+    color: white;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: anim 2s forwards;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  @keyframes anim {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    20% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  
+  .hintBubble::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: rgba(58, 42, 30, 0.9) transparent transparent transparent;
+  }
+  
+  .answerBubble {
+    position: absolute;
+    top: 100%;
+    margin-top: 8px;
+    padding: 6px 12px;
+    background-color: rgba(46, 139, 87, 0.9); /* Полупрозрачный зеленый */
+    color: white;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    z-index: 10;
+    transform: translateY(10px);
+    animation: anim 2s forwards;
+  }
+  
+  .answerBubble::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent rgba(46, 139, 87, 0.9) transparent;
+  }
+  
+  /* .hintBubble {
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: 8px;
+    padding: 6px 12px;
+    background-color: rgba(58, 42, 30, 0.9);
+    color: white;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    z-index: 10;
+    transition:0.3s;
+  } */
+  
+  /* .hintBubble::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: 2s forwards;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-color: #3a2a1e transparent transparent transparent;
+  } */
+  
+  /* .answerBubble {
+    position: absolute;
+    top: 100%;
+    margin-top: 8px;
+    padding: 6px 12px;
+    background-color: #2e8b57;
+    color: white;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition:0.3s;
+
+    z-index: 10;
+  }
+   */
+  /* .answerBubble::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    transition: 0.3s;
+
+    border-color: transparent transparent #2e8b57 transparent;
+  } */
+  
+  .blankInput {
+    min-width: 100px;
+    padding: 8px 12px;
+    border: 2px solid #d4a76a;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-align: center;
+    background-color: white;
+    transition: all 0.3s;
+  }
+  
+  .blankInput:focus {
+    outline: none;
+    border-color: #8b4513;
+    box-shadow: 0 0 0 2px rgba(139, 69, 19, 0.2);
+  }
+  
+  .blankInput::placeholder {
+    color: #ccc;
+    opacity: 1;
+  }
+  
+  .correct {
+    background-color: #f0fff0;
+    border-color: #2e8b57;
+  }
+  
+  .incorrect {
+    background-color: #fff0f0;
+    border-color: #cd5c5c;
+  }
+  
+  .checkButton {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 30px auto 0;
+    padding: 12px 20px;
+    background-color: #8b4513;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .checkButton:hover {
+    background-color: #6b3410;
+  }
+  
+  .checkButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .results {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f5eb;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .results h3 {
+    margin-top: 0;
+    color: #3a2a1e;
+  }
+  
+  .score {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    color: #5c3c21;
+  }
+  
+  .tryAgainButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #d4a76a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .tryAgainButton:hover {
+    background-color: #b38b5a;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+    
+    .title {
+      font-size: 1.5rem;
+    }
+    
+    .textBlock {
+      font-size: 1rem;
+    }
+    
+    .blankInput {
+      min-width: 80px;
+      padding: 6px 8px;
+    }
+    
+    .controls {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+
