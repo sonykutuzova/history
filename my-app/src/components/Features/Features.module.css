@@ -1,81 +1,191 @@
 
-
-.section {
-    padding: 80px 0;
-}
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--vintage-dark);
-    position: relative;
-    text-align: center;
-}
-h2::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 3px;
-    background-color: var(--vintage-gold);
-    margin: 20px auto;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-
 .featuresSection {
-    background-color: white;
+    padding: 80px 0;
     background-image: url('https://www.transparenttextures.com/patterns/paper-1.png');
     border-top: 1px solid var(--vintage-beige);
     border-bottom: 1px solid var(--vintage-beige);
-}
-
-.featuresGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .featuresWrapper {
+    display: flex;
     gap: 30px;
     margin-top: 50px;
-}  
-
-.featureCard {
-    background-color: white;
-    padding: 30px;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 40%;
+  }
+  
+  .featureCard {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s;
     border: 1px solid var(--vintage-beige);
-    text-align: center;
-}
-
-.featureCard:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-.featureIcon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.featureTitle {
+  }
+  
+  .featureCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .featureCard.active {
+    border-left: 4px solid var(--vintage-gold);
+    background-color: #fffaf0;
+  }
+  
+  .featureIcon {
+    font-size: 2rem;
     margin-bottom: 15px;
+    display: inline-block;
+  }
+  
+  .contentArea {
+    width: 60%;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--vintage-beige);
+  }
+  
+  .featureContent h3 {
     color: var(--vintage-dark);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .mapPlaceholder {
+    height: 400px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+  }
+  
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .timelineItem {
+    padding: 10px 15px;
+    background-color: var(--vintage-beige);
+    border-radius: 4px;
+  }
+  
+  .archiveGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  .archiveItem {
+    text-align: center;
+  }
+  
+  .archivePlaceholder {
+    height: 120px;
+    background-color: #f5f5f5;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+  
+  .achievements {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .achievement {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background-color: var(--vintage-beige);
+    border-radius: 20px;
+  }
+  
+  .defaultContent {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--text-light);
+  }
+  
+  @media (max-width: 992px) {
+    .featuresWrapper {
+      flex-direction: column;
+    }
+    
+    .featuresGrid, .contentArea {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .featuresGrid {
+      grid-template-columns: 1fr;
+    }
+    
+    .archiveGrid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  /* Добавим эти стили */
+.contentArea {
+  flex: 1;
+  position: relative;
+  overflow: hidden; /* Скрываем стандартный скроллбар */
 }
 
-@media (max-width: 768px) {
-    html {
-        font-size: 14px;
-    }
-    .section {
-        padding: 30px 0;
-    }
+.contentScrollWrapper {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 12px; /* Оставляем место для кастомного скроллбара */
+  scrollbar-width: thin;
+  scrollbar-color: var(--vintage-gold) var(--vintage-beige);
 }
 
-@media (max-width: 576px) {
-    .featureCard {
-        padding: 15px;
-    }
+/* Вертикальный скроллбар в стиле квестов */
+.contentScrollWrapper::-webkit-scrollbar {
+  width: 8px;
 }
+
+.contentScrollWrapper::-webkit-scrollbar-track {
+  background: var(--vintage-beige);
+  border-radius: 20px;
+}
+
+.contentScrollWrapper::-webkit-scrollbar-thumb {
+  background: var(--vintage-gold);
+  border-radius: 20px;
+  border: 1px solid var(--vintage-dark);
+}
+
+/* Ограничиваем максимальную высоту */
+.featureContent {
+  max-height: 458px; /* Или нужное вам значение */
+}
+
+/* .contentScrollWrapper {
+  scrollbar-gutter: stable;
+  transition: scrollbar-color 0.3s ease;
+}
+
+.contentScrollWrapper:hover {
+  scrollbar-color: var(--vintage-gold-dark) var(--vintage-beige);
+} */

@@ -1,0 +1,147 @@
+/* 
+.timeline {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 8px;
+  }
+  
+  .eraBlock {
+    margin-bottom: 12px;
+  }
+  
+  .eraTitle {
+    font-size: 0.8rem;
+    color: var(--vintage-dark);
+    margin-bottom: 3px;
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--vintage-gold);
+  }
+  
+  .questsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+  
+  .questCard {
+    display: flex;
+    align-items: center;
+    padding: 3px 5px;
+    background-color: var(--vintage-paper);
+    border-radius: 16px;
+    text-decoration: none;
+    color: var(--vintage-dark);
+    font-size: 0.8rem;
+    transition: all 0.2s;
+    border: 1px solid var(--vintage-beige);
+  }
+  
+  .questCard:hover {
+    background-color: var(--vintage-beige);
+    transform: translateY(-2px);
+  }
+  
+  .questIcon {
+    margin-right: 3px;
+    font-size: 0.6rem;
+  }
+  
+  .questTitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+  }
+  
+  @media (max-width: 600px) {
+    .timeline {
+      padding: 5px;
+    }
+    
+    .questsContainer {
+      gap: 3px;
+    }
+    
+    .questCard {
+      padding: 2px 4px;
+      font-size: 0.7rem;
+    }
+    
+    .questTitle {
+      max-width: 120px;
+    }
+  } */
+
+
+  .timeline {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .eraBlock {
+    margin-bottom: 25px;
+  }
+  
+  .eraTitle {
+    font-size: 1.1rem;
+    color: var(--vintage-dark);
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--vintage-gold);
+  }
+  
+  .questsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .questCard {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    background-color: var(--vintage-paper);
+    border-radius: 16px;
+    text-decoration: none;
+    color: var(--vintage-dark);
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    border: 1px solid var(--vintage-beige);
+  }
+  
+  .questCard:hover {
+    background-color: var(--vintage-beige);
+    transform: translateY(-2px);
+  }
+  
+  .questIcon {
+    margin-right: 6px;
+    font-size: 1rem;
+  }
+  
+  .questTitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+  }
+  
+  @media (max-width: 600px) {
+    .timeline {
+      padding: 10px;
+    }
+    
+    .questsContainer {
+      gap: 6px;
+    }
+    
+    .questCard {
+      padding: 5px 10px;
+      font-size: 0.85rem;
+    }
+    
+    .questTitle {
+      max-width: 120px;
+    }
+  }
