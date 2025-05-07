@@ -12,7 +12,7 @@ const FillInTheBlanks = ({ quest }) => {
   const handleInputChange = (e, blankIndex) => {
     setUserAnswers(prev => ({
       ...prev,
-      [blankIndex]: e.target.value.trim(),
+      [blankIndex]: e.target.value,
     }));
   };
 
@@ -49,7 +49,7 @@ const FillInTheBlanks = ({ quest }) => {
             onChange={(e) => handleInputChange(e, blankIndex)}
             className={`${s.blankInput} ${
               showResults 
-                ? userAnswers[blankIndex]?.toLowerCase() === quest.answers[blankIndex]?.toLowerCase()
+                ? userAnswers[blankIndex]?.toLowerCase().trim() === quest.answers[blankIndex]?.toLowerCase().trim()
                   ? s.correct
                   : s.incorrect
                 : ''
@@ -114,8 +114,8 @@ const FillInTheBlanks = ({ quest }) => {
             <h3>Результаты:</h3>
             <div className={s.score}>
               Правильных ответов: {Object.keys(quest.answers).filter(
-                key => userAnswers[key]?.toLowerCase() === quest.answers[key]?.toLowerCase()
-              ).length} из {Object.keys(quest.answers).length}
+                 key => userAnswers[key]?.toLowerCase().trim() === quest.answers[key]?.toLowerCase().trim()
+                ).length} из {Object.keys(quest.answers).length}
             </div>
             <button 
               className={s.tryAgainButton}
