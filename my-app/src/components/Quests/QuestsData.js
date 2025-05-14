@@ -10,7 +10,7 @@ import nineImage from '../../assets/images/nine_image.jpg'
 import tenImage from '../../assets/images/ten_image.jpg'
 import elevenQuest from '../../assets/images/eleven_image.jpg'
 import arc from '../../assets/images/arc.jpg'
-import silverAgeQuest from '../../assets/images/image13.jpg'
+import silverAgeQuest from '../../assets/images/image12.jpg'
 import stalinQuest from '../../assets/images/stal.jpg'
 import ninetiesQuest from '../../assets/images/school.jpg'
 
