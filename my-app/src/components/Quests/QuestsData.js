@@ -669,4 +669,4 @@ export const questsData = [
   //   isRecommended: false,
   // }
 
-  // ];
+  ];
