@@ -616,7 +616,7 @@ export const questsData = [
     isNew: false,
     isPopular: false,
     isRecommended: true,
-  },
+  }
   // {
   //   id: 12,
   //   era: "XVIII-XX века",
