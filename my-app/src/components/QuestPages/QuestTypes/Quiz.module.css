@@ -360,3 +360,76 @@
       padding: 15px;
     }
   }
+
+  /* Стили для изображений */
+.imageContainer {
+  width: 250px;
+  height: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.quizImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.quizImage:hover {
+  transform: scale(1.03);
+}
+
+.questionImageContainer {
+  width: 220px;
+   margin: 15px auto;
+max-height: 180px;  
+border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.questionImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.questionImage:hover {
+  transform: scale(1.03);
+}
+
+.explanationImage {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  margin-top: 15px;
+  border-radius: 6px;
+}
+
+/* Адаптивность для заголовка */
+.header {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+  align-items: flex-start;
+}
+
+.headerContent {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+  
+  .imageContainer {
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+  }
+}

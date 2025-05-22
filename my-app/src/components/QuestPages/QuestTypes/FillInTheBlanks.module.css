@@ -342,3 +342,84 @@
   }
 
 
+  .header {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+  align-items: flex-start;
+}
+
+.headerContent {
+  flex: 1;
+}
+
+.headerImageContainer {
+  width: 300px;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.headerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+    transition: transform 0.3s;
+
+}
+.headerImage:hover {
+  transform: scale(1.03);
+}
+.contentImageContainer {
+    width: 220px;
+   margin: 15px auto;
+max-height: 180px;  
+border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.contentImage {
+ width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.contentImage:hover {
+  transform: scale(1.03);
+}
+
+.imageCaption {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.resultImageContainer {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.resultImage {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+  
+  .headerImageContainer {
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+  }
+}

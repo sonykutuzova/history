@@ -1,65 +1,4 @@
-/* .choose-path-container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background: var(--vintage-paper, #f9f4e7);
-    border: 1px solid var(--vintage-beige, #ddd0b8);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    font-family: 'Georgia', serif;
-  }
-  
-  .quest-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: var(--vintage-dark, #4b3b2a);
-  }
-  
-  .quest-node {
-    font-size: 1.2rem;
-    color: var(--vintage-brown, #5c4a3c);
-    line-height: 1.6;
-  }
-  
-  .options-container {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .option-button {
-    background-color: var(--vintage-gold, #d4af37);
-    border: none;
-    padding: 12px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    color: #fff;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .option-button:hover {
-    background-color: var(--vintage-red, #a94438);
-  }
-  
-  .ending-text {
-    font-weight: bold;
-    font-size: 1.3rem;
-    margin-top: 30px;
-    color: var(--vintage-dark, #4b3b2a);
-  }
-  
-  .back-button {
-    background: transparent;
-    border: none;
-    color: var(--vintage-dark, #4b3b2a);
-    font-size: 1rem;
-    cursor: pointer;
-    margin-bottom: 20px;
-  }
-   */
+
 
    .container {
     max-width: 800px;
@@ -151,21 +90,23 @@
   }
   
   .imageContainer {
-    margin: 20px 0;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 220px;
+   margin: 15px auto;
+max-height: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
-  
+
   .nodeImage {
     width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s;
+height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s;
   }
   
   .nodeImage:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
   }
   
   .optionsContainer {
@@ -256,3 +197,32 @@
       padding: 12px 15px;
     }
   }
+ 
+.headerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imageCaption {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-top: 8px;
+}
+.endingContainer {
+  text-align: center;
+  padding: 30px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.goodEnding {
+  background-color: rgba(46, 204, 113, 0.1);
+  border: 1px solid #2ecc71;
+}
+
+.badEnding {
+  background-color: rgba(231, 76, 60, 0.1);
+  border: 1px solid #e74c3c;
+}
